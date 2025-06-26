@@ -20,20 +20,7 @@ A comprehensive scripting API for automating RuneScape gameplay through the UG A
 
 The UG Advanced Swapper allows you to create automated scripts for RuneScape using a command-based syntax. Each command performs a specific action in the game.
 
-## Script Formatting
-
-### Discord Code Blocks
-When sharing scripts on Discord, always use proper code formatting:
-
-```
-```apache
-Your script commands here
-```
-```
-
-This ensures proper readability and syntax highlighting.
-
-### Basic Syntax Rules
+## Basic Syntax Rules
 - Commands are case-sensitive
 - Parameters are separated by colons `:`
 - Multiple item options use commas `,`
@@ -41,7 +28,7 @@ This ensures proper readability and syntax highlighting.
 
 ## Core Commands
 
-### Chat & Communication
+## Chat & Communication
 ```apache
 Chat:hello world
 ```
