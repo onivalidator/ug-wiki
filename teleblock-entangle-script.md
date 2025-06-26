@@ -10,16 +10,27 @@ This script will automatically choose between Teleblock and Entangle based on wi
 prayer:Protect Item:on
 prayer:Augury:on
 
-if(WildernessLevel > 30) {
+// Check wilderness level and cast appropriate spell
+if(WildernessLevel > 30)
+{
     CastOnTarget:Entangle
     WaitForAnimating:1161
     LastTarget:Walk here
     log:We Cast Entangle on %targetname%
-} else {
+    stop
+}
+else if(WildernessLevel <= 30)
+{
     CastOnTarget:Tele Block
     WaitForAnimating:1820
     LastTarget:Walk here
     log:We Cast Teleblock on %targetname%
+    stop
+}
+else
+{
+    log:Unable to determine wilderness level
+    stop
 }
 ```
 
@@ -27,12 +38,16 @@ if(WildernessLevel > 30) {
 
 1. **Prayer Setup**: Activates Protect Item and Augury for protection and magic accuracy
 2. **Wilderness Level Check**: Uses conditional logic to determine which spell to cast
+   - If wilderness level > 30: Cast Entangle
+   - If wilderness level <= 30: Cast Teleblock
+   - Fallback: Log error if wilderness level can't be determined
 3. **Spell Casting**: Casts the appropriate spell on your current target
 4. **Animation Wait**: Waits for the specific animation ID to complete
    - Entangle: Animation ID 1161
    - Teleblock: Animation ID 1820
 5. **Follow Target**: Walks to target's location after casting
 6. **Logging**: Records which spell was cast and on whom
+7. **Stop**: Ends script execution after completion
 
 ## Usage Notes
 
